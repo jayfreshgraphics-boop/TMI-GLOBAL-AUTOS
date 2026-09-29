@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TMI GLOBAL AUTOS | Lexus RX 350</title>
+<style>
+:root{--bg:#090a0c;--card:#121419;--text:#f5f5f2;--muted:#a6a8ad;--gold:#c8a45b;--line:#292c32}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:10;background:#090a0cf2;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.navin{max-width:1180px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:1.5px}.brand span{color:var(--gold)}
+.links{display:flex;gap:24px;color:#ddd;font-size:14px}.links a:hover{color:var(--gold)}
+.hero{min-height:650px;display:grid;place-items:center;text-align:center;padding:90px 24px;background:radial-gradient(circle at 50% 30%,#292015 0,#111 35%,#090a0c 70%)}
+.hero h1{font-size:clamp(42px,7vw,82px);line-height:.95;margin:0 0 22px;letter-spacing:-3px}.hero h1 span{color:var(--gold)}
+.hero p{max-width:650px;margin:0 auto 32px;color:#c4c5c8;font-size:18px;line-height:1.6}.btn{display:inline-block;padding:15px 24px;border-radius:5px;background:var(--gold);color:#0b0b0b;font-weight:800;margin:5px}.btn.alt{background:transparent;color:#fff;border:1px solid #555}
+.section{max-width:1180px;margin:auto;padding:80px 24px}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.title{font-size:38px;margin:10px 0 35px}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.car{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.carimg{height:210px;background:linear-gradient(135deg,#303238,#101114);display:grid;place-items:center;font-size:54px}.carbody{padding:20px}.car h3{margin:0 0 8px}.price{color:var(--gold);font-size:20px;font-weight:800}.spec{color:var(--muted);font-size:13px;margin:10px 0 18px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.feature{padding:25px;border:1px solid var(--line);border-radius:10px;background:#0f1013}.feature b{display:block;margin:12px 0 7px}.feature p{color:var(--muted);font-size:14px;line-height:1.5;margin:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.aboutbox{border:1px solid var(--line);padding:35px;border-radius:12px;background:linear-gradient(145deg,#15161a,#0d0e10)}.about p{color:#b8bac0;line-height:1.8}
+.cta{text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#101116}.cta h2{font-size:42px;margin:0 0 12px}.cta p{color:var(--muted);margin-bottom:25px}
+footer{padding:35px 24px;color:#888;text-align:center;font-size:13px}
+@media(max-width:800px){.links{display:none}.cars,.features,.about{grid-template-columns:1fr}.hero{min-height:580px}.section{padding:60px 18px}}
+
+.carimg.photo{display:block;height:250px;overflow:hidden;cursor:pointer}
+.carimg.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.carimg.photo:hover img{transform:scale(1.04)}
+.rx-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}
+.rx-gallery img{width:100%;height:190px;object-fit:cover;border-radius:10px;border:1px solid var(--line);cursor:pointer;transition:transform .25s}
+.rx-gallery img:hover{transform:translateY(-3px)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:25px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:94vw;max-height:88vh;object-fit:contain;border-radius:8px}
+.lightbox button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;width:44px;height:44px;border-radius:50%;font-size:28px;cursor:pointer}
+.lb-close{top:22px;right:22px}.lb-prev{left:22px}.lb-next{right:22px}
+@media(max-width:800px){.rx-gallery{grid-template-columns:repeat(2,1fr)}.rx-gallery img{height:150px}}
+
+.video-wrap{height:250px;overflow:hidden;background:#000;position:relative}
+.car-video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+.video-wrap video::-webkit-media-controls-panel{background:rgba(0,0,0,.55)}
+@media(max-width:800px){.video-wrap{height:230px}}
+
+.brand-with-logo{display:flex;align-items:center;gap:10px}
+.brand-with-logo img{width:46px;height:46px;object-fit:contain;border-radius:50%;background:#fff;padding:2px}
+.brand-with-logo span{display:inline-block}
+.brand-with-logo b{font-weight:800}
+@media(max-width:800px){.brand-with-logo img{width:38px;height:38px}}
+
+.vehicle-details{margin:0 0 18px;color:#ddd}
+.vehicle-details summary{cursor:pointer;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1px}
+.vehicle-details ul{margin:10px 0 0;padding-left:18px;color:#b8bac0;font-size:13px;line-height:1.7}
+.new-inventory .carimg{height:250px;overflow:hidden}
+.new-inventory .carimg img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;transition:transform .35s}
+.new-inventory .carimg img:hover{transform:scale(1.03)}
+@media(max-width:800px){.cars{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="navin">
+<div class="brand brand-with-logo">
+<img src="images/car-01.jpg" alt="TMI GLOBAL AUTOS logo">
+<span>TMI <b>GLOBAL AUTOS</b> 🚗</span>
+</div>
+<div class="links"><a href="#cars">Cars</a><a href="#about">About</a><a href="#why">Why Us</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header class="hero">
+<div>
+<div class="eyebrow">Premium Auto Dealership</div>
+<h1>Drive With <span>Confidence.</span></h1>
+<p>Quality, reliable and carefully selected vehicles for customers who value transparency, comfort and peace of mind.</p>
+<a class="btn" href="#cars">VIEW AVAILABLE CARS</a>
+<a class="btn alt" href="https://wa.me/2348068396309">CHAT ON WHATSAPP</a>
+</div>
+</header>
+
+<section class="section" id="cars">
+<div class="eyebrow">Featured Inventory</div><h2 class="title">Available Cars</h2>
+<div class="cars">
+<article class="car mercedes-card">
+<div class="carimg photo"><img src="images/car-02.jpg" alt="Mercedes-Benz E-Class" onclick="openMercedes(0)"></div>
+<div class="carbody">
+<h3>Mercedes-Benz E-Class</h3>
+<div class="price">Price on request</div>
+<div class="spec">Automatic • Petrol • Imported • Carefully inspected</div>
+<a class="btn" href="#mercedes-gallery">VIEW PHOTOS</a>
+<a class="btn alt" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS%2C%20I%27m%20interested%20in%20the%20Mercedes-Benz%20E-Class.">Enquire</a>
+</div></article>
+<article class="car toyota-card">
+<div class="carimg video-wrap">
+<video class="car-video" controls playsinline preload="metadata" poster="">
+  <source src="images/corolla-video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+<div class="carbody"><h3>Toyota</h3><div class="price">Price on request</div><div class="spec">Automatic • Clean interior • Imported • Verified</div><a class="btn" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS%2C%20I%27m%20interested%20in%20the%20Toyota%20Venza.">Enquire</a></div></article>
+<article class="car rx-card">
+<div class="carimg photo"><img src="images/car-03.jpg" alt="Lexus RX 350" onclick="openLightbox(0)"></div>
+<div class="carbody"><h3>Lexus RX 350</h3><div class="price">Price on request</div>
+<div class="spec">Automatic • Luxury SUV • Imported • Carefully inspected</div>
+<a class="btn" href="#rx-gallery">VIEW PHOTOS</a>
+<a class="btn alt" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS%2C%20I%27m%20interested%20in%20the%20Lexus%20RX%20350.">Enquire</a>
+</div></article>
+
+<article class="car new-inventory">
+  <div class="carimg photo">
+    <img src="images/car-04.jpg" alt="Toyota Corolla Sport 2015" onclick="openInventoryImage(0)">
+  </div>
+  <div class="carbody">
+    <div class="eyebrow">New Entry</div>
+    <h3>Toyota Corolla Sport</h3>
+    <div class="price">₦14,000,000 FIRM</div>
+    <div class="spec">Direct Toks • Custom • Sport Trim • 2015</div>
+    <details class="vehicle-details">
+      <summary>VIEW FEATURES</summary>
+      <ul><li>Open roof</li><li>Pre-collision sensors</li><li>Lane departure assist</li><li>Eco driving modes</li><li>2022-back LED lights</li><li>Headlamp washers</li><li>Reverse camera</li><li>First body</li></ul>
+    </details>
+    <a class="btn alt" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS,%20I&#x27;m%20interested%20in%20the%20Toyota%20Corolla%20Sport%20(2015).">Enquire on WhatsApp</a>
+  </div>
+</article>
+
+<article class="car new-inventory">
+  <div class="carimg photo">
+    <img src="images/car-05.jpg" alt="Lexus ES 350 2009" onclick="openInventoryImage(1)">
+  </div>
+  <div class="carbody">
+    <div class="eyebrow">New Entry</div>
+    <h3>Lexus ES 350</h3>
+    <div class="price">₦12,000,000</div>
+    <div class="spec">Direct Toks • 100K mileage • Full option • 2009</div>
+    <details class="vehicle-details">
+      <summary>VIEW FEATURES</summary>
+      <ul><li>Double panoramic roof</li><li>Keyless entry</li><li>Active parking assist</li><li>Headlamp washers</li><li>Eco driving modes</li><li>Mark Levinson sound</li><li>Custom alloy rims</li><li>Accident-free</li></ul>
+    </details>
+    <a class="btn alt" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS,%20I&#x27;m%20interested%20in%20the%20Lexus%20ES%20350%20(2009).">Enquire on WhatsApp</a>
+  </div>
+</article>
+
+<article class="car new-inventory">
+  <div class="carimg photo">
+    <img src="images/car-06.jpg" alt="Mercedes-Benz GLE 450 2017" onclick="openInventoryImage(2)">
+  </div>
+  <div class="carbody">
+    <div class="eyebrow">New Entry</div>
+    <h3>Mercedes-Benz GLE 450</h3>
+    <div class="price">₦63,000,000</div>
+    <div class="spec">4MATIC All-Wheel Drive • Direct Toks • 2017</div>
+    <details class="vehicle-details">
+      <summary>VIEW FEATURES</summary>
+      <ul><li>Panoramic roof</li><li>360° camera</li><li>Hands-free tailgate</li><li>Cream interior</li><li>Ambient lighting</li><li>Blind Spot Assist</li><li>Crosswind Assist</li><li>Active parking assist</li></ul>
+    </details>
+    <a class="btn alt" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS,%20I&#x27;m%20interested%20in%20the%20Mercedes-Benz%20GLE%20450%20(2017).">Enquire on WhatsApp</a>
+  </div>
+</article>
+</div>
+</section>
+
+
+<section class="section" id="mercedes-gallery">
+  <div class="eyebrow">Mercedes-Benz E-Class</div>
+  <h2 class="title">Mercedes-Benz Gallery</h2>
+  <p style="color:var(--muted);max-width:700px;line-height:1.6">Exterior, interior and detail photos of this Mercedes-Benz E-Class.</p>
+  <div class="rx-gallery mercedes-gallery"><img src="images/car-02.jpg" alt="Mercedes-Benz E-Class photo 1" loading="lazy" onclick="openMercedes(0)">
+<img src="images/car-07.jpg" alt="Mercedes-Benz E-Class photo 2" loading="lazy" onclick="openMercedes(1)">
+<img src="images/car-08.jpg" alt="Mercedes-Benz E-Class photo 3" loading="lazy" onclick="openMercedes(2)">
+<img src="images/car-09.jpg" alt="Mercedes-Benz E-Class photo 4" loading="lazy" onclick="openMercedes(3)">
+<img src="images/car-10.jpg" alt="Mercedes-Benz E-Class photo 5" loading="lazy" onclick="openMercedes(4)">
+<img src="images/car-11.jpg" alt="Mercedes-Benz E-Class photo 6" loading="lazy" onclick="openMercedes(5)">
+<img src="images/car-12.jpg" alt="Mercedes-Benz E-Class photo 7" loading="lazy" onclick="openMercedes(6)"></div>
+</section>
+
+<section class="section" id="rx-gallery">
+  <div class="eyebrow">Lexus RX 350</div>
+  <h2 class="title">Vehicle Gallery</h2>
+  <p style="color:var(--muted);max-width:700px;line-height:1.6">Explore the exterior, cabin and interior details of this Lexus RX 350. Tap any photo to view it larger.</p>
+  <div class="rx-gallery"><img src="images/car-03.jpg" alt="Lexus RX 350 photo 1" loading="lazy" onclick="openLightbox(0)">
+<img src="images/car-13.jpg" alt="Lexus RX 350 photo 2" loading="lazy" onclick="openLightbox(1)">
+<img src="images/car-14.jpg" alt="Lexus RX 350 photo 3" loading="lazy" onclick="openLightbox(2)">
+<img src="images/car-15.jpg" alt="Lexus RX 350 photo 4" loading="lazy" onclick="openLightbox(3)">
+<img src="images/car-16.jpg" alt="Lexus RX 350 photo 5" loading="lazy" onclick="openLightbox(4)">
+<img src="images/car-17.jpg" alt="Lexus RX 350 photo 6" loading="lazy" onclick="openLightbox(5)">
+<img src="images/car-10.jpg" alt="Lexus RX 350 photo 7" loading="lazy" onclick="openLightbox(6)">
+<img src="images/car-18.jpg" alt="Lexus RX 350 photo 8" loading="lazy" onclick="openLightbox(7)">
+<img src="images/car-19.jpg" alt="Lexus RX 350 photo 9" loading="lazy" onclick="openLightbox(8)">
+<img src="images/car-20.jpg" alt="Lexus RX 350 photo 10" loading="lazy" onclick="openLightbox(9)"></div>
+</section>
+
+<section class="section" id="why"><div class="eyebrow">The TMI Difference</div><h2 class="title">Why Choose Us?</h2>
+<div class="features">
+<div class="feature">✓<b>Quality Vehicles</b><p>Carefully selected vehicles with quality and reliability in mind.</p></div>
+<div class="feature">✓<b>Transparent Deals</b><p>Clear vehicle information and straightforward communication.</p></div>
+<div class="feature">✓<b>Inspection Focused</b><p>Vehicles are checked before being presented to customers.</p></div>
+<div class="feature">✓<b>Customer Service</b><p>Personal support from enquiry through delivery.</p></div>
+
+<article class="car-card">
+  <div class="carimg"><img src="images/car-21.jpg" alt="2012 Lexus RX350 in wine exterior"></div>
+  <div class="car-details">
+    <span class="tag">DIRECT TOKS 🇺🇸</span>
+    <h3>2012 Lexus RX350</h3>
+    <p>Wine exterior • Tan interior • Fullest option</p>
+    <ul class="specs">
+      <li>Lane Departure Assist</li>
+      <li>Sunroof & Blind Spot Monitor</li>
+      <li>Keyless Entry & Active Parking Assist</li>
+      <li>Headlamp Washers & Eco Driving Modes</li>
+      <li>106k mileage • Mark Levinson sound</li>
+      <li>Total accident free • Custom alloy rims</li>
+    </ul>
+    <div class="price">₦19,000,000</div>
+    <a class="btn" href="https://wa.me/2348068396309?text=Hello%20TMI%20GLOBAL%20AUTOS%2C%20I%27m%20interested%20in%20the%202012%20Lexus%20RX350." target="_blank" rel="noopener">ENQUIRE ON WHATSAPP</a>
+  </div>
+</article>
+
+</div></section>
+
+<section class="section about" id="about">
+<div><div class="eyebrow">About TMI GLOBAL AUTOS</div><h2 class="title">More Than A Car Deal.</h2><p>TMI GLOBAL AUTOS specializes in reliable, high-quality imported cars. Our goal is to make the buying experience simple, transparent and dependable while helping customers find a vehicle that fits their needs.</p></div>
+<div class="aboutbox"><div class="eyebrow">Our Promise</div><h2>Trust first. Cars second.</h2><p>Every customer deserves clear information, professional service and a smooth buying experience.</p></div>
+</section>
+
+<section class="section cta" id="contact"><h2>Ready for your next car?</h2><p>Talk to TMI GLOBAL AUTOS today.</p><a class="btn" href="tel:+2348068396309">CALL 08068396309</a><a class="btn alt" href="https://wa.me/2348068396309">WHATSAPP US</a></section>
+<footer>© 2026 TMI GLOBAL AUTOS. All rights reserved.</footer>
+
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <button class="lb-prev" onclick="changePhoto(-1)">‹</button>
+  <img id="lightboxImg" src="" alt="Lexus RX 350 enlarged photo">
+  <button class="lb-next" onclick="changePhoto(1)">›</button>
+</div>
+<script>
+const rxPhotos = ['images/car-03.jpg','images/car-13.jpg','images/car-14.jpg','images/car-15.jpg','images/car-16.jpg','images/car-17.jpg','images/car-10.jpg','images/car-18.jpg','images/car-19.jpg','images/car-20.jpg'];
+let currentPhoto = 0;
+function openLightbox(i){currentPhoto=i;document.getElementById('lightboxImg').src=rxPhotos[i];document.getElementById('lightbox').classList.add('show');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('show');document.body.style.overflow='';}
+function changePhoto(step){currentPhoto=(currentPhoto+step+rxPhotos.length)%rxPhotos.length;document.getElementById('lightboxImg').src=rxPhotos[currentPhoto];}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')changePhoto(1);if(e.key==='ArrowLeft')changePhoto(-1);});
+</script>
+
+<div class="lightbox" id="mercedesLightbox" onclick="if(event.target===this)closeMercedes()">
+  <button class="lb-close" onclick="closeMercedes()">×</button>
+  <button class="lb-prev" onclick="changeMercedes(-1)">‹</button>
+  <img id="mercedesLightboxImg" src="" alt="Mercedes-Benz E-Class enlarged photo">
+  <button class="lb-next" onclick="changeMercedes(1)">›</button>
+</div>
+<script>
+const mercedesPhotos = ['images/car-02.jpg','images/car-07.jpg','images/car-08.jpg','images/car-09.jpg','images/car-10.jpg','images/car-11.jpg','images/car-12.jpg'];
+let currentMercedes = 0;
+function openMercedes(i) {
+  currentMercedes=i;
+  document.getElementById('mercedesLightboxImg').src=mercedesPhotos[i];
+  document.getElementById('mercedesLightbox').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeMercedes() {
+  document.getElementById('mercedesLightbox').classList.remove('show');
+  document.body.style.overflow='';
+}
+function changeMercedes(step) {
+  currentMercedes=(currentMercedes+step+mercedesPhotos.length)%mercedesPhotos.length;
+  document.getElementById('mercedesLightboxImg').src=mercedesPhotos[currentMercedes];
+}
+</script>
+
+<script>
+const inventoryImages = [
+'images/car-04.jpg',
+'images/car-05.jpg',
+'images/car-06.jpg'
+];
+function openInventoryImage(index){
+  const src = inventoryImages[index];
+  const existing = document.getElementById('inventoryLightbox');
+  if(existing) existing.remove();
+  const box = document.createElement('div');
+  box.id='inventoryLightbox';
+  box.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:grid;place-items:center;padding:24px;cursor:zoom-out';
+  box.innerHTML='<img src="'+src+'" style="max-width:95vw;max-height:90vh;object-fit:contain;border-radius:10px"><button aria-label="Close" style="position:absolute;top:18px;right:22px;background:none;border:0;color:white;font-size:34px;cursor:pointer">×</button>';
+  box.onclick=()=>box.remove();
+  document.body.appendChild(box);
+}
+</script>
+</body></html>
